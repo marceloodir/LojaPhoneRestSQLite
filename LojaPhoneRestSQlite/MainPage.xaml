@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="LojaPhoneRestSQlite.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LojaPhoneRestSQlite"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="128,10,0,0" TextWrapping="Wrap" Text="LojaRestSQlite" VerticalAlignment="Top"/>
+        <Button Content="Remoto" Click="BaixarListagemClick" HorizontalAlignment="Left" Margin="58,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.321,0.498"/>
+        <ListBox Name="ListBoxFabricantes" Margin="0,131,0,65" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="28" Text="{Binding id}" />
+                        <TextBlock FontSize="28" Text=" - " />
+                        <TextBlock FontSize="28" Text="{Binding descricao}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Local"  Click="LocalClick" HorizontalAlignment="Left" Margin="224,63,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
