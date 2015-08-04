@@ -30,7 +30,7 @@ namespace LojaPhoneRestSQlite
     /// </resumo>
     public sealed partial class MainPage : Page
     {
-        private string ip = "http://10.28.18.53";
+        private string ip = "http://192.168.1.107";
 
         public MainPage()
         {
@@ -61,18 +61,18 @@ namespace LojaPhoneRestSQlite
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(ip);
-            var response = await httpClient.GetAsync("/lojarest/api/fabricante?entrada=tabela");
+            var response = await httpClient.GetAsync("/lojarest/api/teste?entrada=loja");
             var str = response.Content.ReadAsStringAsync().Result;
-            string obj = JsonConvert.DeserializeObject<string>(str);
-            string[] cmds = obj.Split('#');
-            System.Diagnostics.Debug.WriteLine("############################Dados brutos## " + obj);
+            List<string> cmds = JsonConvert.DeserializeObject<List<string>>(str);
+            //string obj = JsonConvert.DeserializeObject<string>(str);
+            //string[] cmds = obj.Split('#');
+            System.Diagnostics.Debug.WriteLine("############################Dados brutos## " + cmds.Count());
 
             DataBaseHelperAccess AcessoBanco = new DataBaseHelperAccess();
             foreach (var c in cmds)
             {
                System.Diagnostics.Debug.WriteLine("******************************Dados Trabalhados## " + c);
-                if(c != "")
-                    AcessoBanco.criando_populando(c);
+               AcessoBanco.criando_populando(c);
             }
             MessageDialog msgbox = new MessageDialog("Dados carregados localmente.");
             await msgbox.ShowAsync();
