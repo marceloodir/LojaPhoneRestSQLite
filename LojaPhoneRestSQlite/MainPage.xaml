@@ -10,7 +10,7 @@
 
     <Grid>
         <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="128,10,0,0" TextWrapping="Wrap" Text="LojaRestSQlite" VerticalAlignment="Top"/>
-        <Button Content="Remoto" Click="BaixarListagemClick" HorizontalAlignment="Left" Margin="58,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.321,0.498"/>
+        <Button Content="Remoto" Click="BaixarListagemClick" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.321,0.498"/>
         <ListBox Name="ListBoxFabricantes" Margin="0,131,0,65" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -22,6 +22,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Local"  Click="LocalClick" HorizontalAlignment="Left" Margin="224,63,0,0" VerticalAlignment="Top"/>
+        <Button Content="Local"  Click="LocalClick" HorizontalAlignment="Left" Margin="147,63,0,0" VerticalAlignment="Top"/>
+        <Button Content="Inserir..." Click="InserirClick" HorizontalAlignment="Left" Margin="281,63,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

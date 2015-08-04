@@ -64,8 +64,6 @@ namespace LojaPhoneRestSQlite
             var response = await httpClient.GetAsync("/lojarest/api/teste?entrada=loja");
             var str = response.Content.ReadAsStringAsync().Result;
             List<string> cmds = JsonConvert.DeserializeObject<List<string>>(str);
-            //string obj = JsonConvert.DeserializeObject<string>(str);
-            //string[] cmds = obj.Split('#');
             System.Diagnostics.Debug.WriteLine("############################Dados brutos## " + cmds.Count());
 
             DataBaseHelperAccess AcessoBanco = new DataBaseHelperAccess();
@@ -101,6 +99,11 @@ namespace LojaPhoneRestSQlite
             ListBoxFabricantes.ItemsSource = fabricantes;
 
 
+        }
+
+        private void InserirClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(inserir));
         }
 
     }
